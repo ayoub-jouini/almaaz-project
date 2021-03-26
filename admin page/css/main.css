@@ -1,10 +1,4 @@
 
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
 @font-face {
   font-family: Poppins-Regular;
   src: url('../fonts/poppins/Poppins-Regular.ttf'); 
@@ -19,12 +13,6 @@
   font-family: Poppins-Bold;
   src: url('../fonts/poppins/Poppins-Bold.ttf'); 
 }
-
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
 
 * {
 	margin: 0px; 
@@ -59,7 +47,6 @@ a:hover {
 	color: #57b846;
 }
 
-/*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
@@ -77,8 +64,6 @@ ul, li {
 	list-style-type: none;
 }
 
-
-/*---------------------------------------------*/
 input {
 	outline: none;
 	border: none;
@@ -113,7 +98,7 @@ textarea:-moz-placeholder { color: #999999; }
 textarea::-moz-placeholder { color: #999999; }
 textarea:-ms-input-placeholder { color: #999999; }
 
-/*---------------------------------------------*/
+
 button {
 	outline: none !important;
 	border: none;
@@ -127,13 +112,6 @@ button:hover {
 iframe {
 	border: none !important;
 }
-
-
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ Contact 2 ]*/
 .bg-contact2 {
   width: 100%;  
   background-repeat: no-repeat;
@@ -153,11 +131,11 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: rgba(89,55,162,0.8);
-  background: -webkit-linear-gradient(45deg, rgba(98, 55, 114,0.8), rgba(165, 78, 173,0.8));
-  background: -o-linear-gradient(45deg, rgba(98, 55, 114,0.8), rgba(165, 78, 173,0.8));
-  background: -moz-linear-gradient(45deg, rgba(98, 55, 114,0.8), rgba(165, 78, 173,0.8));
-  background: linear-gradient(45deg, rgba(98, 55, 114,0.8), rgba(165, 78, 173,0.8));
+  background: rgba(89,55,162);
+  background: -webkit-linear-gradient(45deg, rgba(98, 55, 114), rgba(165, 78, 173));
+  background: -o-linear-gradient(45deg, rgba(98, 55, 114), rgba(165, 78, 173));
+  background: -moz-linear-gradient(45deg, rgba(98, 55, 114), rgba(165, 78, 173));
+  background: linear-gradient(45deg, rgba(98, 55, 114), rgba(165, 78, 173));
 }
 
 .wrap-contact2 {
@@ -167,10 +145,6 @@ iframe {
   overflow: hidden;
   padding: 72px 55px 90px 55px;
 }
-
-
-/*------------------------------------------------------------------
-[  ]*/
 
 .contact2-form {
   width: 100%;
@@ -185,12 +159,6 @@ iframe {
   text-align: center;
   padding-bottom: 90px;
 }
-
-
-
-/*------------------------------------------------------------------
-[  ]*/
-
 .wrap-input2 {
   width: 100%;
   position: relative;
@@ -257,8 +225,6 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
-
-/*---------------------------------------------*/
 input.input2 {
   height: 45px;
 }
@@ -295,8 +261,6 @@ textarea.input2 + .focus-input2::after {
   width: 100%;
 }
 
-/*------------------------------------------------------------------
-[ Button ]*/
 .container-contact2-form-btn {
   display: -webkit-box;
   display: -webkit-flex;
@@ -362,20 +326,11 @@ textarea.input2 + .focus-input2::after {
 .wrap-contact2-form-btn:hover .contact2-form-bgbtn {
   left: 0;
 }
-
-/*------------------------------------------------------------------
-[ Responsive ]*/
-
 @media (max-width: 576px) {
   .wrap-contact2 {
     padding: 72px 15px 90px 15px;
   }
 }
-
-
-
-/*------------------------------------------------------------------
-[ Alert validate ]*/
 
 .validate-input {
   position: relative;

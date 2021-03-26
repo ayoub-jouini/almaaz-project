@@ -3,7 +3,7 @@
 }
 .input-div{
 height: 100%;
-width: 30%;
+width: 45%;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -34,6 +34,7 @@ span{
     height: 50%;
     display: inline-block;
     position: absolute;
+    z-index: 999;
 }
 
 .span1{
@@ -60,12 +61,43 @@ span{
     top: 0;
     left: 120px;
 }
-
 .box2{
     width: 100%;
     height: 100%;
-    transform: rotate(-135deg);
+    position:relative;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all ease 5s;
+    transform: rotate(45deg);
 }
+.span5{
+    clip-path: polygon(0 92%, 100% 50% , 0 8%);
+    background-color:   #593772;
+    top: 120px;
+    left: 0;
+}
+.span6{
+    clip-path: polygon(100% 92%, 0 50% , 100% 8%);
+    background-color:  #593772  ;
+    top: 120px;
+    right: 0;
+}
+.span7{
+    clip-path: polygon(50% 0%, 8% 100% , 92% 100%);
+    background-color:   #593772;
+    bottom: 0px;
+    left: 120px;
+}
+.span8{
+    clip-path: polygon(50% 100%, 92% 0% , 8% 0);
+    background-color:   #593772;
+    top: 0;
+    left: 120px;
+}
+.span3 b,.span4 b,.span8 b, .span7 b {
+    transform: rotate(90deg);
+}
+
 
 span b{
     width: 65px;
@@ -78,6 +110,9 @@ span b{
     top: 35%;
     left: 35%;
     transform: (-50% , -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .spin{
@@ -92,6 +127,7 @@ span b{
     border: 4px solid #fff;
     background-color:#FFCC05 ;
     box-shadow: 0 5px 20px #000;
+    z-index: 999;
 }
 
 .mainbox.animate::after{
@@ -104,14 +140,17 @@ span b{
 #main-div2{
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     height: 600px;
+    width: 100%;
 }
 .spin-div{
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 50%;
 }
 .input-design{
     height: 60px;
@@ -144,9 +183,15 @@ span b{
     margin-top: 15px;
     margin-bottom: 100px;
     background-color: #FFCC05;
+    color: #593772;
     width: 450px;
     height: 90px;
     border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bolder;
 }
 hr {
     color: #FFCC05;
@@ -176,15 +221,123 @@ hr {
     border-color: #FFCC05;
     margin: 150px 0;
 }
-@media (max-width:768px){
+.felic-title, .felic-txt{
+    display: none;
+}
+.felic-display{
+    display: block;
+} 
+
+@media (max-width:768px) {
     #main-div2{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: auto auto;
+        width: 100%;
+        height: 700px;
     }
     .spin-div{
         width: 100%;
+        align-items: center;
+        grid-row: 2/3;
     }
     .input-div {
+        width: 80%;
+        margin: 0 10%;
+        grid-row: 1/2;
+    }
+    .input-div-text{
+        width: 80%;
+    }
+    .space {
+        width: 100%;
+    }
+    .input-design{
+        height: 40px;
+    }
+    .input-title{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .input-title h2 {
+        font-size: 20px;
+        width: 80%;
+    }
+    .mainbox{
+        position: relative;
+        width: 250px;
+        height: 250px;
+    }
+    .span1{
+        clip-path: polygon(0 92%, 100% 50% , 0 8%);
+        background-color:   #FFCC05;
+        top: 60px;
+        left: 0;
+    }
+    .span2{
+        clip-path: polygon(100% 92%, 0 50% , 100% 8%);
+        background-color:  #FFCC05  ;
+        top: 60px;
+        right: 0;
+    }
+    .span3{
+        clip-path: polygon(50% 0%, 8% 100% , 92% 100%);
+        background-color:   #FFCC05 ;
+        bottom: 0px;
+        left: 60px;
+    }
+    .span4{
+        clip-path: polygon(50% 100%, 92% 0% , 8% 0);
+        background-color:   #FFCC05;
+        top: 0;
+        left: 60px;
+    }
+    .span5{
+        clip-path: polygon(0 92%, 100% 50% , 0 8%);
+        background-color:   #593772;
+        top: 60px;
+        left: 0;
+    }
+    .span6{
+        clip-path: polygon(100% 92%, 0 50% , 100% 8%);
+        background-color:  #593772  ;
+        top: 60px;
+        right: 0;
+    }
+    .span7{
+        clip-path: polygon(50% 0%, 8% 100% , 92% 100%);
+        background-color:   #593772;
+        bottom: 0px;
+        left: 60px;
+    }
+    .span8{
+        clip-path: polygon(50% 100%, 92% 0% , 8% 0);
+        background-color:   #593772;
+        top: 0;
+        left: 60px;
+    }
+    span b {
+        font-size: 15px;
+        width: 32.5px;
+        height: 32.5px;
+        line-height: 32.5px;
+        top: 30%;
+        left: 30%;
+    }
+    .spin {
+        width: 32.5px;
+        height: 32.5px;
+        
+    }
+    .felic-aff{
+        width: 200px;
+        height: 60px;
+        font-size: 20px;
+    }
+    .felic-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
 }
