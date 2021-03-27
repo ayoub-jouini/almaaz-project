@@ -55,7 +55,10 @@
                         gagner !</h2>
                 </div>
                 <div class="input-div-text">
-                    <form name="myForm" method="POST" action="user.php">
+
+                    <?php if (!isset($_COOKIE["login"])){ echo(isset($_COOKIE["login"]))?> 
+
+                    <form id="form" name="myForm" method="POST" action="user.php">
                         <div class="input-group mb-3 space">
                             <input type="text" name="fname" class="form-control input-design" placeholder="Nom Complet"
                                 aria-label="Nom Complet" aria-describedby="button-addon2">
@@ -75,10 +78,23 @@
                                 placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="button-addon2">
                         </div>
                         <div class="input-group mb-3 space">
-                            <a href="#btn-input"><input type="button" value="TOURNEZ" onclick="if (count < 3) {spin()} "
+                            <a href="#btn-input"><input type="button" value="TOURNEZ" onclick="verif() "
                                     class="btn-input" id="btn-input"></a>
                         </div>
-                    </form>
+                    </form> 
+                    <?php } 
+                            else {  ?> 
+                            <div class="btnss">
+                            <div class="input-group mb-3 space">
+                                    <a href="#btn-input"><input type="button" value="TOURNEZ" onclick="if (count < 3) {spin()} "
+                                            class="btn-input" id="btn-input"></a>
+                                </div>
+
+                                <div class="input-group mb-3 space ">
+                                    <a class="btn-input input_btnss"  href="logout.php">LogOut</a>
+                                </div>
+                                </div>
+                                <?php } ?> 
                 </div>
             </div>
         </div>

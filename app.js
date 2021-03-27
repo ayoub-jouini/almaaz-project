@@ -5,27 +5,92 @@ var btn = document.getElementById('btn');
 
 // set the number of spins 
 
-function spin() {
+
+
+function verif() {
+
     var fname = document.forms["myForm"]["fname"].value;
     var fphone = document.forms["myForm"]["fphone"].value;
     var femail = document.forms["myForm"]["femail"].value;
     var fpassword = document.forms["myForm"]["fpassword"].value;
+    var n = fpassword.length;
+    var y = fphone.length;
+    var ch = /^[A-Za-z]+$/;
 
-    if ((fname == "") || (fphone == "") || (femail == "") || (fpassword == "")) {
-        alert("toute les information sont obligatoire!!");
-    } else {
-        let x = 1000;
-        let y = 9999;
-        let deg = Math.floor(Math.random() * (x - y)) + y;
-        document.getElementsByClassName('box')[0].style.transform = "rotate(" + deg + "deg)";
 
-        var element = document.getElementById('mainbox');
-        element.classList.remove('animate');
-        setTimeout(function () {
-            element.classList.add('animate');
-        }, 5000);
 
-        // the resulets
+    if  (fname.match(ch)==null) {
+        alert("Veuiller saisir un nom valide");
+        return false;
+    }
+
+    if ((n<6)){
+        alert("mot de passe faible");
+        return false;
+    }
+    if ( (isNaN(fphone)) || (y !==8) ){
+        alert('Veuiller saisir un num de tel valide')
+        return false;
+    }
+
+    if ((fname == "") || (fphone == "") || (femail == "") || (fpassword == "")){
+        alert("Veuiller saisir tout les données");
+        return false;
+    } 
+
+    document.getElementById('form').submit();
+}
+
+function spin() {
+
+    // const spanArray = ["span1", "span1", "span1", "span1",
+    //     "span3", "span3", "span3", "span3",
+    //     "span2", "span2", "span2",
+    //     "span4", "span4", "span4",
+    //     "span5", "span5", "span5",
+    //     "span6", "span6",
+    //     "span8", "span8",
+    //     "sapn7"
+    // ]
+
+    let deg;
+    let x = 0;
+    let y = 21;
+    let w = Math.floor(Math.random() * (x - y)) + y;
+    if (w < 4) {
+        deg = 90;
+    } else if (w < 8) {
+        deg = 180;
+    } else if (w < 11) {
+        deg = 270;
+    } else if (w < 14) {
+        deg = 360;
+    } else if (w < 17) {
+        deg = 45;
+    } else if (w < 19) {
+        deg = 225;
+    } else if (w < 21) {
+        deg = 315;
+    } else if (w == 21) {
+        deg = 135;
+    }
+    document.getElementsByClassName('box')[0].style.transform = "rotate(" + (deg + (360 * 50)) + "deg)";
+
+    var element = document.getElementById('mainbox');
+    element.classList.remove('animate');
+    setTimeout(function () {
+        element.classList.add('animate');
+    }, 5000);
+
+        let audio = new Audio('r_sound.mp3');
+
+        audio.pause();
+        audio.currentTime = 0;
+        
+        audio.play();
+        
+
+        // the results
 
         setTimeout(function () {
             let res;
@@ -43,6 +108,7 @@ function spin() {
         }, 5000);
         count++;
 
-    }
 }
+
+
 
